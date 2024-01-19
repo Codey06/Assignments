@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .subjectTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .subjectTable th,
+      .subjectTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .subjectTable th {
+        background-color: #f2f2f2;
+      }
+
+      .subjectTable input {
+        width: 60px;
+        text-align: center;
+      }
+
+      .subjectTable td:nth-last-child(3),
+      .subjectTable td:nth-last-child(2),
+      .subjectTable td:last-child {
+        text-align: right;
+      }
+      /* Add this to your existing CSS or in a separate stylesheet */
+      .subjectTable {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .subjectTable th,
+      .subjectTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .subjectTable label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .subjectTable input {
+        width: 40%;
+        padding: 2px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      /* Add this to your existing CSS or in a separate stylesheet */
+      .subjectTable {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .subjectTable th,
+      .subjectTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .subjectTable label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* Add the following styles to remove input borders */
+      .subjectTable input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        text-align: left; /* Set text alignment to left */
+      }
+      .subjectTable {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .subjectTable th,
+      .subjectTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .subjectTable label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .subjectTable input {
+        width: 100%;
+        padding: 5px; /* Adjust the padding value as needed */
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        text-align: left;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Subject Table</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>Subject Table</h2>
+
+      <label for="gradeSelect">Select Grade:</label>
+      <select id="gradeSelect">
+        <option value="1">Grade 1</option>
+        <option value="2">Grade 2</option>
+        <option value="3">Grade 3</option>
+      </select>
+
+      <label for="numberOfSubjects">Enter the number of subjects:</label>
+      <input type="number" id="numberOfSubjects" min="1" value="1" />
+
+      <button onclick="generateSubjectTable()">Generate Table</button>
+
+      <div id="tableContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<script>
+  document.getElementById("addRowButton").addEventListener("click", addRow);
+
+  function addRow() {
+    var numberOfSubjects = /* Get the number of subjects from user input or another source */;
+    createSubjectsRow("1", numberOfSubjects);
+  }
+
+  function createSubjectsRow(selectedGrade, numberOfSubjects) {
+    var newRow = document.createElement("tr");
+    var idCell = document.createElement("td");
+
+    // Set ID cell
+    idCell.textContent = "1"; // You can adjust this based on your requirements
+    newRow.appendChild(idCell);
+
+    // Create Student Name cell
+    var studentNameCell = document.createElement("td");
+    var subjectNameInput = document.createElement("input");
+    subjectNameInput.type = "text";
+    subjectNameInput.placeholder = "Enter Student Name";
+    studentNameCell.appendChild(subjectNameInput);
+
+    // Append the Student Name cell to the row
+    newRow.appendChild(studentNameCell);
+
+    // Create cells for each subject marks
+    for (var i = 1; i <= numberOfSubjects; i++) {
+      var marksInput = document.createElement("input");
+      marksInput.type = "number";
+      marksInput.placeholder = `Enter Marks for Subject ${i}`;
+      marksInput.addEventListener("input", function () {
+        // Update the total and average when the input changes
+        updateTotalAndAverage(newRow);
+
+        // Validate input to prevent negative values
+        if (parseFloat(this.value) < 0) {
+          this.value = ""; // Clear the input if a negative value is entered
+        }
+      });
+
+      var marksCell = document.createElement("td");
+      marksCell.appendChild(marksInput);
+      newRow.appendChild(marksCell);
+    }
+
+    // Add cells for total and average
+    var totalCell = document.createElement("td");
+    totalCell.textContent = "0"; // Default value
+
+    var averageCell = document.createElement("td");
+    averageCell.textContent = "0.00"; // Default value
+
+    newRow.appendChild(totalCell);
+    newRow.appendChild(averageCell);
+
+    // Append the new row to the table body
+    document.getElementById("tableBody").appendChild(newRow);
+  }
+
+  // Your existing updateTotalAndAverage function
+  function updateTotalAndAverage(row) {
+    // ... (existing code)
+  }
+</script>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/skeleton.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+      body {
+        background-color: #d2d2d2;
+        color: rgb(0, 0, 0);
+      }
+      h1 {
+        text-align: center;
+      }
+      /* button {
+        background-color: #3d0202;
+        color: rgb(255, 255, 255);
+      } */
+
+      .success,
+      .error {
+        color: white;
+        padding: 5px;
+        margin: 5px 0 15 0;
+      }
+       tr{
+        color: rgb(0, 0, 0);
+        background-color: rgb(202, 230, 230);
+        padding: 5px;
+        margin: 5px 0 15 0;
+        vertical-align: middle;
+       border: 15px;
+       border-color: rgb(155, 144, 144);
+      }
+      .success {
+        background: green;
+      }
+      .error {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- container -->
+    <div class="container">
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Tell</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <tr>
+            <td>1</td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+          </tr>
+          <tfoot><tr><th>action</th><td><button id="b1" class="button-primary">New Row</button></td>
+          <td><button id="b2" class="button-secondary">Delete</button></td></tr></tfoot>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- End container -->
+  </body>
+</html>
+<script src="app.js"></script>
+
+<!-- <form>
+      <div class="row">
+        <div class="six columns">
+          <label for="exampleEmailInput">Your email</label>
+          <input
+            class="u-full-width"
+            type="email"
+            placeholder="test@mailbox.com"
+            id="exampleEmailInput"
+          />
+        </div>
+        <div class="six columns">
+          <label for="exampleRecipientInput">Reason for contacting</label>
+          <select class="u-full-width" id="exampleRecipientInput">
+            <option value="Option 1">Questions</option>
+            <option value="Option 2">Admiration</option>
+            <option value="Option 3">Can I get your number?</option>
+          </select>
+        </div>
+      </div>
+      <label for="exampleMessage">Message</label>
+      <textarea
+        class="u-full-width"
+        placeholder="Hi Dave …"
+        id="exampleMessage"
+      ></textarea>
+      <label class="example-send-yourself-copy">
+        <input type="checkbox" />
+        <span class="label-body">Send a copy to yourself</span>
+      </label>
+      <input class="button-primary" type="submit" value="Submit" />
+    </form> -->
+<!-- <h1>Add Book</h1>
+      <form id="fm">
+        <select class="" id="exampleRecipientInput">
+        <option value="Option 1" >Select</option>
+        <option value="Option 1" id="slc">Grade 1</option>
+        <option value="Option 1">Grade 1</option>
+        <option value="Option 2">Grade 2</option>
+        <option value="Option 3">Grade 3</option>
+      </select> 
+        <p>Namber 1: <input type="number" name="txt" id="input"placeholder="Enter number 1:">
+        </p>
+      </form>
+      <button id="b1">Add New</button>
+      <button id="b2">Calculate</button>
+      <button id="b3">Remove</button>
+      <br><br>
+      <div id="dd"></div> -->
+<!-- form -->
+<!-- <form id="book-form">
+        <div>
+          <label for="title">Title</label>
+          <input type="text" id="title" class="u-full-width" />
+        </div>
+        <div>
+          <label for="title">Author</label>
+          <input type="text" id="author" class="u-full-width" />
+        </div>
+        <div>
+          <label for="title">ISBN#</label>
+          <input type="text" id="isbn" class="u-full-width" />
+        </div>
+        <input type="submit" value="Submit" class="u-middle-width" />
+      </form> -->
+<!-- End Form -->
+<!-- <select class="" id="exampleRecipientInput">
+        <option value="Option 1">Select</option>
+        <option value="Option 1">Grade 1</option>
+        <option value="Option 2">Grade 2</option>
+        <option value="Option 3">Grade 3</option>
+      </select>  -->
+<!-- <table class="u-full-width"> -->
+<!-- <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </div>  -->
